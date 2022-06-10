@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
+    <link rel="icon" href="./img/image-hero-desktop.png">
+    <script src="./script.js"></script> 
     <title>Teste-Flexbox</title>
 </head>
-
-<body>
 
     <!------------------ MENU LATERAL ------------------>
 
@@ -20,29 +19,34 @@
         </div>
         <ul class="transparent">&nbsp;</ul>
         <ul class="menu-lateral">
-            <li class="features-lateral" onclick="abrirDropLat()">Features <span class="down-arrow">⇲</span><span class="up-arrow">⇱</span>
-                <div class="drop-down-lateral" id="featureslateral">
-                    <ul>
-                        <li><img src="./img/icon-todo.svg" alt="todolist">&nbsp;TodoList</li>
-                        <li><img src="./img/icon-calendar.svg" alt="calendar">&nbsp;Calendar</li>
-                        <li><img src="./img/icon-reminders.svg" alt="reminders">&nbsp;Remiders</li>
-                        <li><img src="./img/icon-planning.svg" alt="planing">&nbsp;Planing</li>
-                    </ul>
+            <li class="features-lateral">Features <div onclick="abrirDropLat()" id="down-arrow" class="down-arrow">⇲
                 </div>
+                <div onclick="fecharDropLat()" id="uparrow" class="up-arrow">⇱</div>
             </li>
-            <li class="company-lateral" onclick="abrirDropLat2()">Company <span class="down-arrow">⇲</span><span class="up-arrow">⇱</span>
-                <div class="drop-down-lateral" id="companylateral" >
-                    <ul> 
-                        <li>&nbsp;Calendar</li>
-                        <li>&nbsp;Remiders</li>
-                        <li>&nbsp;Planing</li>
-                    </ul>
+            <div class="drop-down-lateral" id="featureslateral">
+                <ul>
+                    <li><img src="./img/icon-todo.svg" alt="todolist">&nbsp;TodoList</li>
+                    <li><img src="./img/icon-calendar.svg" alt="calendar">&nbsp;Calendar</li>
+                    <li><img src="./img/icon-reminders.svg" alt="reminders">&nbsp;Remiders</li>
+                    <li><img src="./img/icon-planning.svg" alt="planing">&nbsp;Planing</li>
+                </ul>
+            </div>
+            <li class="company-lateral">Company <div onclick="abrirDropLat2()" id="downarrow3" class="downarrow3">⇲
                 </div>
+                <div onclick="fecharDropLat2()" id="uparrow3" class="uparrow3">⇱</div>
             </li>
-            <li>Careers</li>
-            <li>About</li>
+
+            <div class="drop-down-lateral" id="companylateral">
+                <ul>
+                    <li>&nbsp;History</li>
+                    <li>&nbsp;Our Team</li>
+                    <li>&nbsp;Blog</li>
+                </ul>
+            </div>
+            <li class="carrers">Careers</li>
+            <li class="about">About</li>
             <li class="login">Login</li>
-            <li class="register">Register</li>
+            <li class="register" onclick="procuraBackEnd()">Register</li>
         </ul>
     </div>
 
@@ -55,8 +59,11 @@
         <div class="nav-left">
             <ul>
                 <li><img src="./img/logo.svg" alt="logo-snap"></li>
-                <li class="features" onclick="showDropDown()">Features <img src="./img/icon-arrow-down.svg" alt="">
-                    <div class="drop-down">
+                <li class="features">Features <img onclick="showDropDown()" id="idimgdownarrow" class="img-down-arrow"
+                        src="./img/icon-arrow-down.svg" alt="">
+                    <img onclick="hideDropDown()" id="idimguparrow" class="img-up-arrow" src="./img/icon-arrow-up.svg"
+                        alt="">
+                    <div class="drop-down" id="showdropdown">
                         <ul>
                             <li><img src="./img/icon-todo.svg" alt="todolist"> TodoList</li>
                             <li><img src="./img/icon-calendar.svg" alt="calendar"> Calendar</li>
@@ -65,8 +72,14 @@
                         </ul>
                     </div>
                 </li>
-                <li class="company">Company <img src="./img/icon-arrow-down.svg" alt="seta-baixo">
-                    <div class="drop-down">
+
+
+                <li class="company">Company<img onclick="showDropDown2()" id="iddropdowncompany" src="./img/icon-arrow-down.svg"
+                        class="img-drop-down-second"  alt="seta-baixo">
+
+                    <img onclick="hideDropDown2()" id="iddropupcompany" class='img-drop-up-second' src="./img/icon-arrow-up.svg" alt="">
+
+                    <div class="drop-down-company" id="showdropdown2">
                         <ul>
                             <li>History</li>
                             <li>Our Team</li>
@@ -74,8 +87,11 @@
                         </ul>
                     </div>
                 </li>
-                <li>Careers</li>
-                <li>About</li>
+                <li class="carrers">Careers</li>
+                <li class="about">About</li>
+
+
+
             </ul>
         </div>
         <div class="nav-right">
@@ -83,8 +99,8 @@
                 <img src="./img/icon-menu.svg" alt="icone-hamburguer">
             </div>
             <ul>
-                <li>Login</li>
-                <li>Register</li>
+                <li class="login">Login</li>
+                <li class="register" onclick="procuraBackEnd()">Register</li>
             </ul>
         </div>
     </nav>
@@ -101,7 +117,7 @@
             <p>Get your team in sync, no matter yout location, Streamline processes, create team rituals, and watch
                 productivity soar.</p>
 
-            <div class="botao"><input type="button" value="Learn More"></div>
+            <div class="botao"><input type="button" onclick="manipulandoDOM()" value="Learn More"></div>
 
             <div class="audio">
                 <div class="audio1">
